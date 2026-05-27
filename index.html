@@ -3,845 +3,492 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kim Jinsoo | Portfolio — Game PM</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<title>Kim Jinsoo — Global PM Portfolio</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --dark:#2d2d2d;--dark2:#3a3a3a;
-  --teal:#4aaa96;--teal2:#3d8a7a;
-  --orange:#e07840;
-  --light:#f4f4f2;--white:#ffffff;
-  --text:#1e1e1e;--muted:#888;--border:#ddd;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR','Inter',sans-serif;background:var(--light);color:var(--text);padding-top:60px}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Pretendard:wght@300;400;500;600&display=swap');
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
-  background:rgba(45,45,45,.97);backdrop-filter:blur(12px);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.nav-brand{color:#fff;font-size:.95rem;font-weight:700;letter-spacing:.12em;text-decoration:none;flex-shrink:0}
-.nav-links{display:flex;gap:.15rem;list-style:none}
-.nav-links a{
-  display:flex;align-items:center;gap:.35rem;
-  padding:.45rem .85rem;border-radius:6px;
-  color:rgba(255,255,255,.6);text-decoration:none;
-  font-size:.78rem;font-weight:500;letter-spacing:.02em;
-  transition:all .22s ease;position:relative;overflow:hidden}
-.nav-links a .n{color:var(--teal);font-weight:700;font-size:.72rem;transition:color .22s}
-.nav-links a:hover{color:#fff;background:rgba(74,170,150,.16)}
-.nav-links a:hover .n{color:var(--orange)}
-.nav-links a.active{color:#fff;background:rgba(74,170,150,.2)}
-.nav-links a.active .n{color:var(--orange)}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── SECTION BASE ── */
-section{scroll-margin-top:60px}
+  :root {
+    --navy: #0D1B2A;
+    --navy-mid: #1A2E42;
+    --navy-light: #243C52;
+    --accent: #C8960C;
+    --accent-light: #E8B94A;
+    --text-primary: #F0EDE6;
+    --text-secondary: #9EB0C0;
+    --text-muted: #5C7A91;
+    --border: rgba(200,150,12,0.2);
+    --border-subtle: rgba(255,255,255,0.07);
+    --tag-kr: #E8402A;
+    --tag-jp: #C8960C;
+    --tag-tw: #1B7FC4;
+    --tag-sea: #27AE60;
+    --tag-naeu: #7D3C98;
+  }
 
-/* ── COVER ── */
-#cover{
-  min-height:100vh;background:var(--dark);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:5rem 5vw 4rem;position:relative;overflow:hidden}
-#cover::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--teal),var(--orange))}
-#cover::after{content:'Portfolio';position:absolute;right:-2vw;bottom:-8vh;
-  font-size:clamp(12rem,28vw,26rem);font-weight:900;
-  color:rgba(255,255,255,.03);pointer-events:none;line-height:1;white-space:nowrap}
-.c-name{font-size:clamp(.85rem,1.3vw,1rem);color:rgba(255,255,255,.65);
-  font-weight:500;letter-spacing:.18em;margin-bottom:.4rem}
-.c-tag{font-size:clamp(.78rem,1.1vw,.9rem);color:rgba(255,255,255,.4);margin-bottom:2.5rem}
-.c-title{font-size:clamp(5rem,14vw,12rem);font-weight:900;color:#fff;
-  line-height:.88;letter-spacing:-.02em;margin-bottom:4rem}
-.c-contact{display:flex;align-items:stretch;gap:0}
-.c-item{display:flex;flex-direction:column;gap:.3rem;padding:0 2.5rem 0 0}
-.c-item:first-child{padding-left:0}
-.c-divider{width:1px;background:rgba(255,255,255,.18);margin:0 2.5rem 0 0}
-.c-label{font-size:.72rem;font-weight:700;color:var(--teal);letter-spacing:.1em;text-transform:uppercase}
-.c-val{font-size:.95rem;font-weight:600;color:#fff}
+  html { scroll-behavior: smooth; }
 
-/* ── DARK SECTION HEADER ── */
-.sh{background:var(--dark2);padding:3.5rem 5vw;position:relative;overflow:hidden}
-.sh::after{content:'';position:absolute;bottom:0;left:5vw;width:54px;height:3px;
-  background:linear-gradient(90deg,var(--teal) 50%,var(--orange) 50%)}
-.sh-num{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;color:var(--teal);line-height:1}
-.sh-title{font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:700;color:#fff;line-height:1.2}
-.sh-sub{font-size:.88rem;color:rgba(255,255,255,.45);margin-top:.6rem}
+  body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    background-color: var(--navy);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
 
-/* ── PROFILE ── */
-#profile{background:var(--white)}
-.ph{background:var(--light);padding:2rem 5vw;border-bottom:1px solid var(--border)}
-.ph h2{font-size:1.6rem;font-weight:700;color:var(--dark)}
-.ph p{font-size:.85rem;color:var(--muted);margin-top:.2rem}
-.pc{padding:2.5rem 5vw;display:grid;grid-template-columns:140px 1fr;gap:2.5rem;align-items:start}
-.p-photo{width:140px;height:168px;background:var(--light);border:2px dashed var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.75rem;color:var(--muted);text-align:center;border-radius:4px;flex-shrink:0;line-height:1.6}
-.p-name{font-size:1.9rem;font-weight:700;color:var(--dark)}
-.p-birth{font-size:.88rem;color:var(--muted);margin-top:.2rem}
-.p-divider{border:none;border-top:2px solid var(--teal);margin:.9rem 0 1.5rem}
-.p-row{display:grid;grid-template-columns:110px 1fr;gap:.75rem;align-items:start;margin-bottom:1.25rem}
-.p-lbl{font-size:.8rem;font-weight:700;color:var(--teal);padding-top:.1rem}
-.p-val{font-size:.85rem;color:var(--text);line-height:1.6}
-table.ct{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.5rem}
-table.ct thead tr{background:var(--dark);color:#fff}
-table.ct th{padding:.65rem 1rem;text-align:center;font-weight:600;letter-spacing:.04em}
-table.ct td{padding:.6rem 1rem;text-align:center;border-bottom:1px solid var(--border)}
-table.ct tbody tr:nth-child(even){background:var(--light)}
-table.ct tbody tr:hover{background:rgba(74,170,150,.06)}
+  /* HEADER */
+  header {
+    padding: 24px 48px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid var(--border-subtle);
+  }
 
-/* ── PROJECT PORTFOLIO ── */
-#proj{background:var(--white)}
-.pj-hd{background:var(--light);padding:2rem 5vw;border-bottom:1px solid var(--border)}
-.pj-hd h2{font-size:1.6rem;font-weight:700;color:var(--dark)}
-.pj-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
-.pj-col{border-right:1px solid var(--border)}
-.pj-col:last-child{border-right:none}
-.pj-col-hd{background:var(--dark);color:#fff;text-align:center;padding:.9rem 1rem;font-size:.85rem;font-weight:700;letter-spacing:.05em}
-.pj-body{padding:1.5rem}
-.pj-sub-hd{font-size:.85rem;font-weight:600;text-align:center;color:var(--dark);margin-bottom:.9rem}
-.pj-items{list-style:none;text-align:center}
-.pj-items li{font-size:.79rem;color:#555;padding:.25rem 0;line-height:1.45}
-.pj-hr{border:none;border-top:1px solid var(--border);margin:.9rem 0}
+  .header-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
 
-/* ── INDEX ── */
-#idx{background:var(--dark);padding:5rem 5vw}
-.idx-title{display:inline-block;font-size:2.2rem;font-weight:900;color:#fff;
-  padding-bottom:.9rem;margin-bottom:2.5rem;position:relative}
-.idx-title::after{content:'';position:absolute;bottom:0;left:0;width:54px;height:3px;
-  background:linear-gradient(90deg,var(--teal) 50%,var(--orange) 50%)}
-.idx-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+  .header-name {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+    letter-spacing: -0.02em;
+  }
 
-/* INDEX CARDS — 01~02 hover effect */
-.idx-card{
-  display:block;text-decoration:none;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;padding:2.5rem 2rem;
-  position:relative;overflow:hidden;
-  transition:all .3s cubic-bezier(.25,.46,.45,.94)}
-.idx-card::before{
-  content:'';position:absolute;top:0;left:0;
-  width:3px;height:0;
-  background:linear-gradient(180deg,var(--teal),var(--orange));
-  transition:height .35s ease}
-.idx-card:hover{
-  background:rgba(74,170,150,.11);
-  border-color:rgba(74,170,150,.4);
-  transform:translateY(-5px);
-  box-shadow:0 16px 48px rgba(0,0,0,.45)}
-.idx-card:hover::before{height:100%}
-.idx-n{font-size:1rem;font-weight:700;color:var(--teal);letter-spacing:.05em;margin-bottom:.4rem}
-.idx-ttl{font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:.3rem}
-.idx-range{font-size:.82rem;font-weight:700;color:var(--orange)}
-.idx-desc{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.65rem;line-height:1.65}
-.idx-arrow{
-  position:absolute;right:1.5rem;bottom:1.5rem;
-  font-size:1.4rem;color:rgba(255,255,255,.18);
-  transition:all .3s ease}
-.idx-card:hover .idx-arrow{color:var(--teal);transform:translateX(5px)}
+  .header-name span {
+    color: var(--accent);
+    font-style: italic;
+  }
 
-/* ── FRAMEWORK ── */
-#fw{background:var(--light)}
-.fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
-.fw-card{
-  background:var(--white);display:grid;
-  grid-template-columns:190px 1fr;
-  transition:all .25s ease;cursor:default;position:relative}
-.fw-card.full{grid-column:1/-1}
-.fw-card .fw-l{
-  background:var(--dark2);padding:2rem 1.5rem;
-  display:flex;flex-direction:column;justify-content:flex-end;position:relative}
-.fw-card .fw-l::before{
-  content:'';position:absolute;top:1.5rem;left:1.5rem;
-  width:38px;height:3px;
-  background:linear-gradient(90deg,var(--teal) 50%,var(--orange) 50%);
-  transition:width .3s ease}
-.fw-card:hover .fw-l::before{width:60px}
-.fw-t{font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.4rem}
-.fw-t2{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.3;margin-bottom:.3rem}
-.fw-st{font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.5}
-.fw-card .fw-r{background:var(--white);padding:1.75rem 1.5rem}
-.fw-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.11);z-index:2;transform:scale(1.015)}
-.fw-card:hover .fw-l{background:#252525}
-.bul{display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.65rem;font-size:.81rem;color:var(--text);line-height:1.55}
-.bul-d{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.4rem}
-.bul-d.o{background:var(--orange)}
-.sub{display:flex;align-items:flex-start;gap:.4rem;margin-bottom:.5rem;padding-left:1.1rem;font-size:.78rem;color:#555;line-height:1.45}
-.sub-d{width:5px;height:5px;border-radius:50%;border:1.5px solid var(--teal);flex-shrink:0;margin-top:.4rem}
+  .header-sub {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
 
-/* fw full inner 2col */
-.fw-r2c{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .header-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 2.0;
+    max-width: 560px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
 
-/* ── PERFORMANCE ── */
-#perf{background:var(--white)}
-.perf-cat{border-bottom:1px solid var(--border)}
-.perf-cat-hd{
-  background:var(--dark);padding:1.35rem 5vw;
-  display:flex;align-items:center;gap:.9rem}
-.badge{color:#fff;font-size:.72rem;font-weight:700;padding:.28rem .75rem;border-radius:4px;letter-spacing:.04em}
-.badge.biz{background:var(--teal)}
-.badge.svc{background:var(--orange)}
-.badge.etc{background:#666}
-.perf-cat-title{font-size:1rem;font-weight:600;color:#fff}
-.perf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.pc-card{
-  background:var(--white);padding:1.75rem;
-  transition:all .25s ease}
-.pc-card:hover{background:#fafaf8;box-shadow:0 6px 24px rgba(0,0,0,.09);z-index:1;transform:scale(1.02)}
-.pc-period{font-size:.72rem;color:var(--muted);margin-bottom:.4rem}
-.pc-title{
-  font-size:.95rem;font-weight:700;color:var(--dark);
-  border-left:3px solid var(--teal);padding-left:.7rem;margin-bottom:.25rem}
-.pc-sub{font-size:.76rem;color:var(--muted);padding-left:1rem;margin-bottom:.9rem}
-.pc-list{list-style:none}
-.pc-list li{font-size:.79rem;color:#444;padding:.25rem 0;line-height:1.5;
-  display:flex;align-items:flex-start;gap:.4rem}
-.pc-list li::before{content:'•';color:var(--teal);flex-shrink:0;line-height:1.5}
-.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:.9rem}
-.kpi-i{background:var(--light);border-radius:5px;padding:.45rem .3rem;text-align:center}
-.kpi-l{font-size:.65rem;color:var(--muted);margin-bottom:.15rem}
-.kpi-v{font-size:.88rem;font-weight:700;color:var(--teal)}
-.conf{font-size:.7rem;color:var(--muted);text-align:right;padding:.75rem 5vw}
+  .header-desc strong {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
 
-/* ── FOOTER ── */
-footer{background:var(--light);padding:4rem 5vw;text-align:center;border-top:1px solid var(--border)}
-.ft-ty{font-size:clamp(2rem,6vw,4.5rem);font-weight:900;color:var(--dark);margin-bottom:1rem}
-.ft-tag{font-size:.9rem;color:#555}
-.ft-links{display:flex;justify-content:center;gap:2.5rem;margin-top:1.5rem;flex-wrap:wrap}
-.ft-links a{font-size:.88rem;color:var(--teal);text-decoration:none;font-weight:500}
-.ft-links a:hover{text-decoration:underline}
-.ft-copy{margin-top:1.5rem;font-size:.75rem;color:var(--muted)}
+  .header-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
-/* ── FADE-IN ── */
-.fi{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
-.fi.on{opacity:1;transform:translateY(0)}
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
 
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .fw-grid{grid-template-columns:1fr}
-  .fw-card.full{grid-column:1}
-  .perf-cards{grid-template-columns:1fr 1fr}
-  .idx-grid{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  #cover{padding:4rem 1.5rem 3rem}
-  .c-contact{flex-direction:column;gap:1.25rem}
-  .c-divider{display:none}
-  .sh{padding:2.5rem 1.5rem}
-  .sh::after{left:1.5rem}
-  .pc{grid-template-columns:1fr;padding:1.5rem}
-  .p-photo{width:100%;height:160px}
-  .pj-grid{grid-template-columns:1fr}
-  .pj-col{border-right:none;border-bottom:1px solid var(--border)}
-  .pj-col:last-child{border-bottom:none}
-  #idx{padding:3rem 1.5rem}
-  .idx-grid{grid-template-columns:1fr}
-  .fw-card{grid-template-columns:1fr}
-  .fw-card .fw-l{min-height:80px;justify-content:center}
-  .fw-r2c{grid-template-columns:1fr}
-  .perf-cards{grid-template-columns:1fr}
-  .perf-cat-hd{padding:1.25rem 1.5rem}
-  footer{padding:3rem 1.5rem}
-  .nav-brand{display:none}
-  .nav-links a{padding:.4rem .55rem;font-size:.72rem}
-  .nav-links a .n{display:none}
-}
+  .meta-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .meta-item a:hover { color: var(--accent-light); }
+
+  .meta-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--text-muted);
+  }
+
+  /* REGION TAGS */
+  .region-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .rtag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .rtag-kr { background: rgba(232,64,42,0.15); color: #E8402A; border: 0.5px solid rgba(232,64,42,0.3); }
+  .rtag-jp { background: rgba(200,150,12,0.15); color: #C8960C; border: 0.5px solid rgba(200,150,12,0.3); }
+  .rtag-tw { background: rgba(27,127,196,0.15); color: #1B7FC4; border: 0.5px solid rgba(27,127,196,0.3); }
+  .rtag-sea { background: rgba(39,174,96,0.15); color: #27AE60; border: 0.5px solid rgba(39,174,96,0.3); }
+  .rtag-naeu { background: rgba(125,60,152,0.15); color: #9B59D8; border: 0.5px solid rgba(125,60,152,0.3); }
+
+  /* MAIN CONTENT */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 48px 32px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* PORTFOLIO CARDS */
+  .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 0.5px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .pcard {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    background: var(--navy-mid);
+    border-bottom: 0.5px solid var(--border-subtle);
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .pcard:last-child { border-bottom: none; }
+  .pcard:hover { background: var(--navy-light); }
+
+  .pcard-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 28px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .pcard-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+    min-width: 24px;
+    padding-top: 3px;
+  }
+
+  .pcard-body { flex: 1; }
+
+  .pcard-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .pcard-sub {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .pcard-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .ptag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    border: 0.5px solid var(--border-subtle);
+  }
+
+  .ptag-type {
+    background: rgba(200,150,12,0.1);
+    color: var(--accent);
+    border-color: rgba(200,150,12,0.2);
+  }
+
+  .pcard-arrow {
+    font-size: 18px;
+    color: var(--text-muted);
+    padding-top: 2px;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .pcard:hover .pcard-arrow {
+    color: var(--accent-light);
+    transform: translateX(3px);
+  }
+
+  /* COMING SOON CARD */
+  .pcard-coming {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .coming-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    border: 0.5px solid var(--border-subtle);
+  }
+
+  /* SUB-DOC LINK */
+  .subdoc-link {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 1px;
+    background: rgba(27,127,196,0.05);
+  }
+
+  .subdoc-link .pcard-inner {
+    padding: 12px 32px 12px 80px;
+  }
+
+  .subdoc-indicator {
+    width: 16px;
+    height: 16px;
+    border-left: 1px solid var(--text-muted);
+    border-bottom: 1px solid var(--text-muted);
+    border-radius: 0 0 0 3px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .subdoc-link .pcard-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  /* FOOTER */
+  footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 48px 28px;
+    border-top: 0.5px solid var(--border-subtle);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-credit {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    header, main, footer { padding-left: 24px; padding-right: 24px; }
+    header { padding-top: 40px; }
+    .pcard-inner { padding: 20px 20px; gap: 16px; }
+    .subdoc-link .pcard-inner { padding: 14px 20px 14px 56px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-note { text-align: left; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
-<nav>
-  <a href="#cover" class="nav-brand">KIM JINSOO</a>
-  <ul class="nav-links">
-    <li><a href="#cover"><span class="n">01.</span> Intro</a></li>
-    <li><a href="#profile"><span class="n">02.</span> Profile</a></li>
-    <li><a href="#proj"><span class="n">03.</span> Projects</a></li>
-    <li><a href="#fw"><span class="n">04.</span> Framework</a></li>
-    <li><a href="#perf"><span class="n">05.</span> Performance</a></li>
-  </ul>
-</nav>
-
-<!-- ── 01. COVER ── -->
-<section id="cover">
-  <div class="c-name">Kim Jinsoo</div>
-  <div class="c-tag">: 데이터 분석과 서비스 기획으로 프로젝트의 생존과 성장을 이끄는 프로덕트 매니저</div>
-  <div class="c-title">Portfolio</div>
-  <div class="c-contact">
-    <div class="c-item">
-      <span class="c-label">Phone</span>
-      <span class="c-val">010.3008.3273</span>
-    </div>
-    <div class="c-divider"></div>
-    <div class="c-item">
-      <span class="c-label">E-mail</span>
-      <span class="c-val">dbtjdcjstk@gmail.com</span>
-    </div>
+<header>
+  <p class="header-eyebrow">Portfolio · Global Product Manager</p>
+  <h1 class="header-name">Kim Jinsoo<span>.</span></h1>
+  <p class="header-sub">김진수 · Global Game Product Manager · 16년차</p>
+  <p class="header-desc">
+    <strong>데이터 분석과 서비스 기획으로 프로젝트의 생존과 성장을 이끄는 프로덕트 매니저</strong><br>
+    · 사업·서비스·개발 전 영역을 이해하고, 데이터 기반 서비스 기획으로 직결시킵니다.<br>
+    <span style="white-space: nowrap;">· 런칭 TDL부터 라이브 위기 대응까지, 문제가 생기면 가장 먼저 대안을 들고 나타나는 사람입니다.</span><br>
+    <span style="white-space: nowrap;">· Apple·Google 등 Store 관리부터 마켓 플랫폼 커뮤니케이션까지, 서비스가 안정적으로 라이브 되도록 선제적으로 움직입니다.</span>
+  </p>
+  <div class="header-meta">
+    <span class="meta-item">📞 <a href="tel:01030083273">010.3008.3273</a></span>
+    <span class="meta-dot"></span>
+    <span class="meta-item">📧 <a href="mailto:dbtjdcjstk@gmail.com">dbtjdcjstk@gmail.com</a></span>
+    <span class="meta-dot"></span>
+    <span class="meta-item">2026.05</span>
   </div>
-</section>
+</header>
 
-<!-- ── 02. PROFILE ── -->
-<section id="profile">
-  <div class="ph">
-    <h2>Profile</h2>
-    <p>데이터 분석과 서비스 기획으로 프로젝트의 생존과 성장을 이끄는 프로덕트 매니저</p>
-  </div>
-  <div class="pc">
-    <div class="p-photo">프로필<br>사진</div>
-    <div>
-      <div class="p-name">김진수 (Kim Jinsoo)</div>
-      <div class="p-birth">1984. 4. 4</div>
-      <hr class="p-divider">
-      <div class="p-row">
-        <span class="p-lbl">Education</span>
-        <span class="p-val">2013. 3 &nbsp; 경운대학교 건축학부 실내건축전공 졸업</span>
-      </div>
-      <div class="p-row">
-        <span class="p-lbl">Work Experiences</span>
-        <div>
-          <table class="ct">
-            <thead><tr><th>기간</th><th>회사명 / 직급</th><th>직무</th></tr></thead>
-            <tbody>
-              <tr><td>2023.05 ~ 2026.02 (2년 10개월)</td><td>GLOHOW / 실장</td><td>게임본부 사업/운영 총괄</td></tr>
-              <tr><td>2022.02 ~ 2022.12 (11개월)</td><td>NXN / 팀장</td><td>글로벌 서비스PM / 마켓 관리</td></tr>
-              <tr><td>2021.10 ~ 2022.01 (4개월)</td><td>NPIXEL / 파트장</td><td>사업PM / 마켓 관리</td></tr>
-              <tr><td>2018.11 ~ 2021.08 (2년 10개월)</td><td>Vespa inc / 실장</td><td>글로벌 서비스PM / 마켓 관리</td></tr>
-              <tr><td>2014.03 ~ 2018.05 (4년 3개월)</td><td>Webzen / 선임</td><td>글로벌 사업/서비스PM</td></tr>
-              <tr><td>2010.03 ~ 2012.09 (2년 7개월)</td><td>Neowiz CRS / 사원</td><td>사업/게임운영</td></tr>
-              <tr><td>2007.10 ~ 2009.09 (2년)</td><td>Neople / 사원</td><td>게임운영</td></tr>
-            </tbody>
-          </table>
+<main>
+  <p class="section-label">Portfolio Documents</p>
+
+  <div class="portfolio-list">
+
+    <!-- 01 -->
+    <div class="pcard">
+      <a class="pcard-inner" href="https://drive.google.com/file/d/1STUFTzFP9gaISAm2fqc57_DKyCtY3Cew/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="pcard-num">01</span>
+        <div class="pcard-body">
+          <p class="pcard-title">김진수 · 글로벌PM 포트폴리오</p>
+          <p class="pcard-sub">Business PM · Service PM · Mobile Market Manager — 실무 경험 기반 전략 프레임워크</p>
+          <div class="pcard-tags">
+            <span class="ptag ptag-type">Overview</span>
+            <span class="ptag">Global Publishing</span>
+            <span class="ptag">Live Service</span>
+            <span class="ptag">GOB</span>
+            <span class="ptag">Mobile Market Manager</span>
+          </div>
         </div>
-      </div>
-      <div class="p-row">
-        <span class="p-lbl">License</span>
-        <div class="p-val">
-          2002. 07. 01 &nbsp; 정보처리기능사<br>
-          2002. 06. 07 &nbsp; 인터넷정보검색사 2급<br>
-          2001. 06. 09 &nbsp; 워드프로세서 1급
+        <span class="pcard-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- 02 -->
+    <div class="pcard">
+      <a class="pcard-inner" href="https://drive.google.com/file/d/1W-eGEAnGyvv8VWf0I2-Kecv0S6L79eOV/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="pcard-num">02</span>
+        <div class="pcard-body">
+          <p class="pcard-title">글로벌 시장 분석 — MMORPG & 서브컬처</p>
+          <p class="pcard-sub">5개 권역 시장 분석 · MMORPG 장르 분석 · 서브컬처 장르 분석 · Appendix</p>
+          <div class="pcard-tags">
+            <span class="ptag ptag-type">Market Analysis</span>
+            <span class="rtag rtag-kr" style="font-size:10px;padding:3px 8px;">KR</span>
+            <span class="rtag rtag-jp" style="font-size:10px;padding:3px 8px;">JP</span>
+            <span class="rtag rtag-tw" style="font-size:10px;padding:3px 8px;">TW</span>
+            <span class="rtag rtag-sea" style="font-size:10px;padding:3px 8px;">SEA</span>
+            <span class="rtag rtag-naeu" style="font-size:10px;padding:3px 8px;">NAEU</span>
+          </div>
         </div>
-      </div>
+        <span class="pcard-arrow">→</span>
+      </a>
     </div>
-  </div>
-</section>
 
-<!-- ── 03. PROJECT PORTFOLIO ── -->
-<section id="proj">
-  <div class="pj-hd"><h2>Project Portfolio</h2></div>
-  <div class="pj-grid">
-    <div class="pj-col">
-      <div class="pj-col-hd">Business Product Manager</div>
-      <div class="pj-body">
-        <div class="pj-sub-hd">Mobile Project</div>
-        <ul class="pj-items">
-          <li>Black Beacon (2025. 04)</li>
-          <li>그랑사가 (2021. 10)</li>
-          <li>Shot Online Golf: World Championship (2018. 04)</li>
-          <li>Shot Online M (2016. 07)</li>
-          <li>The BEAST (2016. 05)</li>
-          <li>BEST9 (2014. 03)</li>
-        </ul>
-        <hr class="pj-hr">
-        <div class="pj-sub-hd">PC Project</div>
-        <ul class="pj-items">
-          <li>Seven Souls (MMORPG)</li>
-          <li>Modern War (Web Strategy Game)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="pj-col">
-      <div class="pj-col-hd">Service Product Manager</div>
-      <div class="pj-body">
-        <div class="pj-sub-hd">Mobile Project</div>
-        <ul class="pj-items">
-          <li>拉薩拉斯(라살라스) (2024. 10)</li>
-          <li>奧丁：神叛(오딘) (2023. 05)</li>
-          <li>King's Raid (2021. 08)</li>
-          <li>Shot Online M (2016. 07)</li>
-          <li>The BEAST (2016. 05)</li>
-          <li>BEST9 (2014. 03)</li>
-          <li>룬즈 오브 드래곤 (2013. 12)</li>
-          <li>리듬의 신 for kakao (2013. 10)</li>
-        </ul>
-        <hr class="pj-hr">
-        <div class="pj-sub-hd">PC Project</div>
-        <ul class="pj-items">
-          <li>Seven Souls (MMORPG)</li>
-          <li>던전앤파이터 (MORPG)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="pj-col">
-      <div class="pj-col-hd">Etc. Work</div>
-      <div class="pj-body">
-        <div class="pj-sub-hd">Mobile Task</div>
-        <ul class="pj-items">
-          <li>Mobile Market 관리</li>
-          <li>통합 약관 관리</li>
-        </ul>
-        <hr class="pj-hr">
-        <div class="pj-sub-hd">PC Task</div>
-        <ul class="pj-items">
-          <li>정책 및 약관 관리</li>
-          <li>게등위 심의 관리</li>
-          <li>신입사원 지도 및 업무 교육 진행</li>
-          <li>계정도용 프로세스 수립</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── INDEX (clickable) ── -->
-<section id="idx">
-  <div class="idx-title">INDEX</div>
-  <div class="idx-grid">
-    <a href="#fw" class="idx-card fi">
-      <div class="idx-n">I.</div>
-      <div class="idx-ttl">실무 프레임워크</div>
-      <div class="idx-range">(5p ~ 16p)</div>
-      <div class="idx-desc">16년의 경험으로 정립한 지표 기반의 의사결정 체계 및 서비스 최적화 방법론</div>
-      <span class="idx-arrow">→</span>
-    </a>
-    <a href="#perf" class="idx-card fi">
-      <div class="idx-n">II.</div>
-      <div class="idx-ttl">프로젝트 성과 및 상세 레퍼런스</div>
-      <div class="idx-range">(17p ~ 35p)</div>
-      <div class="idx-desc">프레임워크 적용을 통한 정량적/정성적 성과 기록</div>
-      <span class="idx-arrow">→</span>
-    </a>
-  </div>
-</section>
-
-<!-- ── 04. FRAMEWORK ── -->
-<section id="fw">
-  <div class="sh">
-    <div class="sh-num">01.</div>
-    <div class="sh-title">실무 프레임워크</div>
-    <div class="sh-sub">: 16년의 경험으로 정립한 지표 기반의 의사결정 체계 및 서비스 최적화 방법론</div>
-  </div>
-  <div class="fw-grid">
-
-    <!-- PM Role Definition (full width) -->
-    <div class="fw-card full fi">
-      <div class="fw-l" style="min-height:200px;">
-        <div class="fw-t">PM ROLE DEFINITION</div>
-        <div class="fw-t2">사업PM vs 서비스PM</div>
-        <div class="fw-st">: 비즈니스 가치 창출과<br>서비스 안정성의 균형</div>
-      </div>
-      <div class="fw-r fw-r2c" style="padding:1.75rem 1.5rem;">
-        <div>
-          <div class="bul"><div class="bul-d"></div><strong>사업 PM (Business Product Manager)</strong></div>
-          <div class="sub"><div class="sub-d"></div>매출 목표 달성 및 P&L 최적화 미션</div>
-          <div class="sub"><div class="sub-d"></div>상품성(게임성) 관리 및 BM 설계</div>
-          <div class="sub"><div class="sub-d"></div>KPI: ROAS, LTV, ARPPU, PUR, Revenue</div>
-          <div style="margin-top:.9rem;font-size:.75rem;font-weight:600;color:var(--muted);">핵심 커뮤니케이션</div>
-          <div class="sub"><div class="sub-d"></div>'내부 및 경영진' 중심 설득</div>
-          <div class="sub"><div class="sub-d"></div>외부 파트너사·마케팅팀·재무팀·경영진</div>
+    <!-- 03 -->
+    <div class="pcard">
+      <a class="pcard-inner" href="https://drive.google.com/file/d/1U-htRtn9t6jbHCQ333y-DikZ22MT4oI9/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="pcard-num">03</span>
+        <div class="pcard-body">
+          <p class="pcard-title">글로벌 작업장 리스크 관리 전략</p>
+          <p class="pcard-sub">대홍마(대만 · 홍콩 · 마카오) & 동남아 — 불법 프로그램과 작업장 운영 대응 전략</p>
+          <div class="pcard-tags">
+            <span class="ptag ptag-type">Risk Strategy</span>
+            <span class="rtag rtag-tw" style="font-size:10px;padding:3px 8px;">TW · HK · MA</span>
+            <span class="rtag rtag-sea" style="font-size:10px;padding:3px 8px;">SEA</span>
+          </div>
         </div>
-        <div>
-          <div class="bul"><div class="bul-d o"></div><strong>서비스 PM (Service Product Manager)</strong></div>
-          <div class="sub"><div class="sub-d"></div>유저 경험 관리 및 리스크 통제</div>
-          <div class="sub"><div class="sub-d"></div>서비스 지속성 및 라이브 안정성</div>
-          <div class="sub"><div class="sub-d"></div>지표: DAU/MAU, Retention, 이탈률, VOC</div>
-          <div style="margin-top:.9rem;font-size:.75rem;font-weight:600;color:var(--muted);">핵심 커뮤니케이션</div>
-          <div class="sub"><div class="sub-d"></div>'내부 유관부서 및 유저' 중심 조율</div>
-          <div class="sub"><div class="sub-d"></div>개발팀(서버/클라/기획/QA)·CS·디자인팀</div>
+        <span class="pcard-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- 03-1 subdoc -->
+    <div class="pcard subdoc-link">
+      <a class="pcard-inner" href="https://drive.google.com/file/d/1U_TdMVhLO3ooDoqLYcQ4CXdGBlerO6pO/view?usp=drive_link" target="_blank" rel="noopener">
+        <div class="subdoc-indicator"></div>
+        <div class="pcard-body">
+          <p class="pcard-title">대홍마 시장 — 불법 프로그램과 작업장의 근절은 불가능한 것인가</p>
+          <div class="pcard-tags">
+            <span class="ptag">심층 분석</span>
+            <span class="rtag rtag-tw" style="font-size:10px;padding:3px 8px;">TW · HK · MA</span>
+          </div>
         </div>
-      </div>
+        <span class="pcard-arrow" style="font-size:15px;">→</span>
+      </a>
     </div>
 
-    <!-- LTV -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">LTV 분석</div>
-        <div class="fw-t2">시점별 전략과 산식의 정교화</div>
-        <div class="fw-st">: 서비스를 통해 지표의 한계를 확장하는 실전적 관점</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>LTV 통상 산식:</strong> ARPU × Lifetime(1/이탈률)</div>
-        <div class="bul"><div class="bul-d"></div><strong>LTV 적용 산식:</strong> ARPPU × PUR × Retention</div>
-        <div class="sub"><div class="sub-d"></div>코호트 기반 D1~D7 시점별 산출 및 누적 추적</div>
-        <div class="sub"><div class="sub-d"></div>코호트별 지표 변주를 정교하게 추적, 문제 구간 즉각 진단</div>
-        <div class="bul"><div class="bul-d o"></div><strong>시점별 전략:</strong> 런칭 전 탑다운 → 런칭 후 바텀업 전환</div>
-        <div class="sub"><div class="sub-d"></div>Payback Period(회수기간) 도출</div>
-      </div>
-    </div>
-
-    <!-- 코호트 -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">코호트 분석</div>
-        <div class="fw-t2">데이터의 착시 제거와 활용</div>
-        <div class="fw-st">: 국가별 유저 성향과 권역별 서비스 최적화 전략</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div>유입 시점별 유저 그룹화(Cohort)를 통한 순수 지표 추적</div>
-        <div class="sub"><div class="sub-d"></div>고인물 유저로 인한 '전체 리텐션 착시' 제거</div>
-        <div class="sub"><div class="sub-d"></div>D3/D7 전환율 하락 시 콘텐츠 허들 구간 즉각 식별</div>
-        <div class="bul"><div class="bul-d o"></div>'Daily ARPU × Retention'을 통한 마케팅 효율 실시간 검증</div>
-      </div>
-    </div>
-
-    <!-- 시장 분석 -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">시장 분석</div>
-        <div class="fw-t2">시장 세그먼트별 집중 지표</div>
-        <div class="fw-st">: 장르별 PLC에 따른 집중 지표 및 타겟팅 최적화</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>하이퍼 캐주얼:</strong> D1~D3 리텐션, eCPM 대비 CPI</div>
-        <div class="bul"><div class="bul-d"></div><strong>하이브리드 캐주얼:</strong> No-Ads 구매율, D3~D7 결제 전환율, IAP 비중 50%↑</div>
-        <div class="bul"><div class="bul-d"></div><strong>미드코어(서브컬처):</strong> D7 리텐션 및 특정 콘텐츠 도달율</div>
-        <div class="bul"><div class="bul-d o"></div><strong>하드코어(MMORPG):</strong> D14~D30 중장기 잔존 및 Whale 유저 생애 가치</div>
-      </div>
-    </div>
-
-    <!-- PLC -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">PLC</div>
-        <div class="fw-t2">모객에서 진입까지의 단계별 데이터 구분</div>
-        <div class="fw-st">: 유입 데이터의 질적 분석을 통한 진짜 유저(Active) 판별</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>1단계 모객/UA:</strong> CPI, 광고 CTR, 스토어 전환율</div>
-        <div class="bul"><div class="bul-d"></div><strong>2단계 기술진입:</strong> 앱 설치 대비 튜토리얼 진입률, 리소스 다운로드 이탈률</div>
-        <div class="bul"><div class="bul-d"></div><strong>3단계 안착/PLC:</strong> D1 리텐션, 튜토리얼 완료율, 1차 주요 콘텐츠 도달</div>
-        <div class="bul"><div class="bul-d o"></div><strong>4단계 전환:</strong> Time to First Purchase, 상품 노출 대비 클릭률</div>
-      </div>
-    </div>
-
-    <!-- Player Life Cycle -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">Player Life Cycle과 LTV의 상관관계</div>
-        <div class="fw-st">이탈 구간 분석을 통한 서비스 개선 및 리텐션 확보</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div>개별 유저의 진입 → 안착 → 성장 → 전환 → 이탈하는 심리적·행동적 주기 파악</div>
-        <div class="sub"><div class="sub-d"></div>Product Life Cycle: 거시적 결과론</div>
-        <div class="sub"><div class="sub-d"></div>Player Life Cycle: 선제적 대응 가능 도구</div>
-        <div class="bul"><div class="bul-d o"></div>플레이어 사이클 붕괴 → 사업적 위기 신호로 간주하고 대응</div>
-        <div class="bul"><div class="bul-d o"></div>매출 하락 전 PLC 단계별 데이터로 선제적 액션 수행</div>
-      </div>
-    </div>
-
-    <!-- 글로벌 유저 DNA -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">글로벌 권역별 유저 DNA 및 시장 특성</div>
-        <div class="fw-st">16년의 경험으로 증명된 국가별 유저 본질<br>(변하지 않는 글로벌 DNA)</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>한국:</strong> 초고속 콘텐츠 소비, 효율 극대화, 강력한 유저 주권 의식</div>
-        <div class="bul"><div class="bul-d"></div><strong>대·홍·마:</strong> 한국형 BM 친화도, 길드 중심 결속, VIP 케어 선호</div>
-        <div class="bul"><div class="bul-d"></div><strong>동남아:</strong> 저단가 효율 상품 선호, SNS 기반 폭발적 바이럴</div>
-        <div class="bul"><div class="bul-d o"></div><strong>미국/유럽:</strong> P2W 거부감, 배틀패스 중심 합리적 소비, 자기만족형 성장 지향</div>
-      </div>
-    </div>
-
-    <!-- 글로벌 시장 변화 -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">글로벌 시장의 현재와 변화에 대한 고찰</div>
-        <div class="fw-st">유저의 높아진 눈높이에 맞춘 서비스 고도화 전략<br>(공정성 및 성숙도 업그레이드 대응)</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>운영 면역력 강화:</strong> BM 설계 의도와 반복 패턴에 대한 유저의 학습 및 간파</div>
-        <div class="bul"><div class="bul-d"></div><strong>공정성 가치:</strong> 권역별 빌드 차이를 즉각적인 '불공정'으로 인식</div>
-        <div class="bul"><div class="bul-d o"></div><strong>전략적 방향:</strong> 문화적 현지화(Culturalization) 역량 확보</div>
-        <div class="sub"><div class="sub-d"></div>권역별 감수성 존중 + 전체 서비스의 '공정성 밸런스' 유지</div>
-      </div>
-    </div>
-
-    <!-- AI 분석 자동화 -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">AI를 통한 분석 자동화 및 데이터 통합 체계</div>
-        <div class="fw-st">AI를 활용한 실무 프로세스의 Depth 강화 및 속도전</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>수동 확인의 보완:</strong> AI 활용 정기/주기적 대시보드 리포트 메일링 자동화</div>
-        <div class="bul"><div class="bul-d"></div><strong>MMP-DB 결합 분석:</strong> UA 매체(MMP)와 실제 게임 로그(DB)를 AI로 결합</div>
-        <div class="bul"><div class="bul-d o"></div><strong>PLC 입체 추적:</strong> 유입 경로별 행동 패턴·이탈 징후 실시간 감지 및 리포팅</div>
-      </div>
-    </div>
-
-    <!-- AI 의사결정 -->
-    <div class="fw-card fi">
-      <div class="fw-l">
-        <div class="fw-t">AI 기반 의사결정 체계와 PM의 미래 역량</div>
-        <div class="fw-st">데이터 가공 및 전략 수립의 압도적 생산성 확보</div>
-      </div>
-      <div class="fw-r">
-        <div class="bul"><div class="bul-d"></div><strong>데이터 주도권 확보:</strong> SQL 등 기술적 허들 없이 자연어 쿼리로 실시간 분석</div>
-        <div class="bul"><div class="bul-d"></div><strong>PM의 본질 변화:</strong> 데이터 추출자가 아닌 '질문을 던지는 기획자'</div>
-        <div class="bul"><div class="bul-d o"></div><strong>핵심 가치:</strong> AI 분석 결과를 비즈니스 가설 검증과 프로덕트 방향성 결정에 활용하는 '최종 판단력'</div>
-      </div>
-    </div>
-
-  </div><!-- /fw-grid -->
-</section>
-
-<!-- ── 05. PERFORMANCE ── -->
-<section id="perf">
-  <div class="sh">
-    <div class="sh-num">02.</div>
-    <div class="sh-title">프로젝트 성과 및 상세 레퍼런스</div>
-    <div class="sh-sub">: 프레임워크 적용을 통한 정량적/정성적 성과 기록</div>
-  </div>
-
-  <!-- Business PM -->
-  <div class="perf-cat">
-    <div class="perf-cat-hd">
-      <span class="badge biz">Business PM</span>
-      <span class="perf-cat-title">PERFORMANCE — Business Product Manager</span>
-    </div>
-    <div class="perf-cards">
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2022년 1월</div>
-        <div class="pc-title">그랑사가 1주년 업데이트</div>
-        <div class="pc-sub">NPIXEL — MMORPG 한국 서비스 사업PM</div>
-        <ul class="pc-list">
-          <li>사전등록 → IN/OUT-Game 이벤트 기획 → 오픈까지 전 과정 리딩</li>
-          <li>기획·사업·마케팅 유관 부서 전체 프로모션 방향성 일관성 관리</li>
-        </ul>
-        <div class="kpi">
-          <div class="kpi-i"><div class="kpi-l">DAU</div><div class="kpi-v">+68%</div></div>
-          <div class="kpi-i"><div class="kpi-l">NRU</div><div class="kpi-v">+249%</div></div>
-          <div class="kpi-i"><div class="kpi-l">RAU</div><div class="kpi-v">+235%</div></div>
-          <div class="kpi-i"><div class="kpi-l">PUR</div><div class="kpi-v">+146%</div></div>
-          <div class="kpi-i"><div class="kpi-l">NPU</div><div class="kpi-v">+208%</div></div>
-          <div class="kpi-i"><div class="kpi-l">ARPPU</div><div class="kpi-v">+81%</div></div>
+    <!-- 04 -->
+    <div class="pcard">
+      <a class="pcard-inner" href="https://drive.google.com/file/d/1MJA8fuM8ochtELL_xrhRiKANyiedsNBs/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="pcard-num">04</span>
+        <div class="pcard-body">
+          <p class="pcard-title">팬덤 구조 분석</p>
+          <p class="pcard-sub">서브컬처 & MMORPG — 권역별 팬덤 형성 구조 · USP · 후킹·워킹 메커니즘</p>
+          <div class="pcard-tags">
+            <span class="ptag ptag-type">Fandom Analysis</span>
+            <span class="ptag">서브컬처</span>
+            <span class="ptag">MMORPG</span>
+          </div>
         </div>
-      </div>
+        <span class="pcard-arrow">→</span>
+      </a>
+    </div>
 
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2024년 11월</div>
-        <div class="pc-title">Black Beacon 글로벌 런칭</div>
-        <div class="pc-sub">GLOHOW — 한/중/일 제외 글로벌 메인 PM</div>
-        <ul class="pc-list">
-          <li>전체 프로젝트 마일스톤 관리 및 TDL 관리</li>
-          <li>QA·Tech·L10N·운영·MKT 전 유관 부서 일정 조율 및 병목 해소</li>
-          <li>중국 개발사와의 빌드 일정·기술 협의 총괄</li>
-          <li>GBT 시나리오 기획 및 런칭 사업 전략·업데이트 플랜 수립</li>
-          <li>약관·운영 전략·Admin-Tool 기획 디렉팅 포함</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2025년 11월</div>
-        <div class="pc-title">글로벌 서브컬처 장르 런칭 매출 시뮬레이션</div>
-        <div class="pc-sub">경쟁 타이틀 기반 3-Way 시나리오 설계</div>
-        <ul class="pc-list">
-          <li>TW/HK&MO / NA(US, CA) / SEA 권역별 경쟁 게임 지표 분석</li>
-          <li>Best / Normal / Worst Case 시나리오 산출</li>
-          <li>ARPPU·D30 Retention·Install Factor 기반 매출 예측 모델 설계</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">2018년 4월 런칭 (글로벌 원빌드)</div>
-        <div class="pc-title">Shot Online Golf: World Championship</div>
-        <div class="pc-sub">Webzen — 글로벌 원빌드 서비스 PM</div>
-        <ul class="pc-list">
-          <li>회사 내 최초 글로벌 원빌드 서비스 달성</li>
-          <li>리소스 다운로드 이탈 구간 분석 → 미니게임 추가로 이탈율 완화</li>
-        </ul>
-        <div class="kpi" style="grid-template-columns:repeat(4,1fr);">
-          <div class="kpi-i"><div class="kpi-l">CBT</div><div class="kpi-v">18%</div></div>
-          <div class="kpi-i"><div class="kpi-l">1차 SL</div><div class="kpi-v">31%</div></div>
-          <div class="kpi-i"><div class="kpi-l">2차 SL</div><div class="kpi-v">25%</div></div>
-          <div class="kpi-i"><div class="kpi-l">GL</div><div class="kpi-v">20%</div></div>
+    <!-- 05 -->
+    <div class="pcard">
+      <a class="pcard-inner" href="https://drive.google.com/file/d/1SiflQXyUleeM5-lkSg7ui4sC7HD-x8my/view?usp=drive_link" target="_blank" rel="noopener">
+        <span class="pcard-num">05</span>
+        <div class="pcard-body">
+          <p class="pcard-title">글로벌 시장 분석 — 코어 세그먼트별 분류</p>
+          <p class="pcard-sub">하드코어 / 미드코어 / 하이브리드캐주얼 / 캐주얼 / 하이퍼캐주얼</p>
+          <div class="pcard-tags">
+            <span class="ptag ptag-type">Core Segment Analysis</span>
+            <span class="ptag">Hardcore</span>
+            <span class="ptag">Midcore</span>
+            <span class="ptag">Hybrid Casual</span>
+            <span class="ptag">Casual</span>
+            <span class="ptag">Hyper Casual</span>
+          </div>
         </div>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">2016년 7월 런칭 (한국)</div>
-        <div class="pc-title">Shot Online M (Sports)</div>
-        <div class="pc-sub">Webzen — 라이브 서비스 PM</div>
-        <ul class="pc-list">
-          <li>Google Play Store 런칭 Featured 선정 후 안정적 출시</li>
-          <li>Google 2016 '올해를 빛낸 짜릿한 게임' 수상</li>
-          <li>Google 오락실 연계 마케팅 AR 체험존 진행</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2024년 4월</div>
-        <div class="pc-title">Action RPG 글로벌 런칭 핵심 시장 경쟁 분석</div>
-        <div class="pc-sub">Asian RPG Market 분석 (중·일·한 제외)</div>
-        <ul class="pc-list">
-          <li>대·홍·마: High ARPPU / 패키지 내용물 집중, 가격 수용도 높음</li>
-          <li>동남아: Large users / 이벤트·비활성 계정 영향, 합리적 가격 집중</li>
-          <li>매출·다운로드 분포 기반 권역별 타겟팅 최적화 전략 수립</li>
-        </ul>
-      </div>
-
+        <span class="pcard-arrow">→</span>
+      </a>
     </div>
+
   </div>
+</main>
 
-  <!-- Service PM -->
-  <div class="perf-cat">
-    <div class="perf-cat-hd">
-      <span class="badge svc">Service PM</span>
-      <span class="perf-cat-title">PERFORMANCE — Service Product Manager</span>
-    </div>
-    <div class="perf-cards">
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2023년 07월</div>
-        <div class="pc-title">운영 전체 유관부서 Process 재확립</div>
-        <div class="pc-sub">GLOHOW — 부서간 분절된 업무 구조 개선 및 R&R 명확화</div>
-        <ul class="pc-list">
-          <li>PM·LiveOps·CM·CS·RM·MONITOR 역할 전체 재정립</li>
-          <li>점검 준비 → 점검 설정 → 점검 진행 → 점검 종료 4단계 프로세스</li>
-          <li>서비스 이슈 Report 자동화, Risk Log Index 최신화</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2021년 12월</div>
-        <div class="pc-title">서비스 Action Plan 수립 및 진행</div>
-        <div class="pc-sub">Vespa — KING's RAID 글로벌 서비스</div>
-        <ul class="pc-list">
-          <li>업데이트 Roadmap 기반 서비스 Action 수립 및 유저 소통 강화</li>
-          <li>ISMS 및 Store 정책에 따른 탈퇴 프로세스 초기 기획</li>
-          <li>월간 서비스 플랜 및 인게임/커뮤니티 이벤트 기획</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2018년 3월</div>
-        <div class="pc-title">서비스 종료 Action Plan 수립</div>
-        <div class="pc-sub">유저 신뢰 보호를 위한 환불 정책 및 종료 프로세스 설계</div>
-        <ul class="pc-list">
-          <li>서비스 종료 공지 → 환불 접수 → 본인확인 → 잔여 재화 차감 프로세스</li>
-          <li>환불 세부 정책: 약관 상 범위, 수수료, 대상 기간 전면 설계</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2017년 2월</div>
-        <div class="pc-title">글로벌 현지화 운영 전략 수립</div>
-        <div class="pc-sub">최소 인원으로 최대 퍼포먼스를 위한 권역별 운영 구조 설계</div>
-        <ul class="pc-list">
-          <li>콘텐츠 단일화: 본사 주체 관리, GMT 기준 타이머 방식 채택</li>
-          <li>6개 언어 CS 대응 (영·불·독·한·일·중국어 간체)</li>
-          <li>이벤트 사전 안내 프로세스 수립, 국가별 CS 담당자 선정</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2023년 12월</div>
-        <div class="pc-title">대홍마(대만·홍콩·마카오) 시장 작업장 분석</div>
-        <div class="pc-sub">GLOHOW — 불법 프로그램·작업장 식별 연구</div>
-        <ul class="pc-list">
-          <li>자동사냥·스피드핵·공중비행 핵 분류 및 대응책 도출</li>
-          <li>게임 내 제공 기능 경계에서의 작업장 패턴 정의</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2015년 6월</div>
-        <div class="pc-title">BackOffice(운영툴) 기획 (통계 포함)</div>
-        <div class="pc-sub">Webzen — 서비스 운영 최적화 및 효율화</div>
-        <ul class="pc-list">
-          <li>회원관리·서비스관리·로그·이벤트관리·통계·서버관리·계정관리 설계</li>
-          <li>로그 검색: 서버/날짜/구분값별 조회, 팝업 캘린더</li>
-          <li>통계(BI) 체계 함께 수립</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Etc. Work -->
-  <div class="perf-cat">
-    <div class="perf-cat-hd">
-      <span class="badge etc">Etc. Work</span>
-      <span class="perf-cat-title">PERFORMANCE — Etc. Work</span>
-    </div>
-    <div class="perf-cards">
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2021년 6월</div>
-        <div class="pc-title">모바일 Market 등록 제반 사항 체크리스트</div>
-        <div class="pc-sub">Play Store(AOS) + App Store(iOS) 통합 가이드 항시 구비</div>
-        <ul class="pc-list">
-          <li>상품명·간단한설명·자세한설명·고해상도 아이콘·스크린샷·그래픽이미지 전 항목 관리</li>
-          <li>IAP·IPA·콘텐츠 등급·개인정보보호 URL 등 출시 전 필수 항목 완비</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2021년 4월</div>
-        <div class="pc-title">Mobile Console Guideline 수립</div>
-        <div class="pc-sub">Google Play Console 등록 정보 관리 가이드</div>
-        <ul class="pc-list">
-          <li>앱 이름(50자) / 간단한 설명(80자) / 자세한 설명(4,000자) 기준 수립</li>
-          <li>HTML 폰트 편집, 이모지 활용, 업데이트/프로모션 대응 포함</li>
-        </ul>
-      </div>
-
-      <div class="pc-card fi">
-        <div class="pc-period">자료 기준: 2020년 6월</div>
-        <div class="pc-title">Apple, Google 시즈널 피칭 로드맵 수립 및 제안</div>
-        <div class="pc-sub">Vespa — KING's RAID Featured 전략</div>
-        <ul class="pc-list">
-          <li>Roadmap Schedule: 게임 소개·마케팅 계획·업데이트 항목 공유 타임라인</li>
-          <li>MKT Schedule: Japan / Korea &amp; Taiwan / US 권역별 마케팅 시작일 설계</li>
-          <li>Apple Today Featured 달성, Google HR 배너·ICON형 3개월 단위 지속</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-  <div class="conf">Confidential | 16년 차 게임 PM 실무 프레임워크 | 김진수(KIM JINSOO)</div>
-</section>
-
-<!-- ── FOOTER ── -->
 <footer>
-  <div class="ft-ty">Thank You</div>
-  <p class="ft-tag">데이터 분석과 서비스 기획으로 프로젝트의 생존과 성장을 이끄는 프로덕트 매니저</p>
-  <div class="ft-links">
-    <a href="tel:01030083273">📞 010.3008.3273</a>
-    <a href="mailto:dbtjdcjstk@gmail.com">✉️ dbtjdcjstk@gmail.com</a>
+  <div class="footer-inner">
+    <p class="footer-credit">Confidential · 16년차 글로벌PM 실무 프레임워크 · Kim Jinsoo (김진수)</p>
+    <p class="footer-note">본 분석은 LLM을 활용한 지표 추출과 실무 경험 기반 검증을 거친 'Hybrid Analysis' 결과물입니다.</p>
   </div>
-  <p class="ft-copy">Kim Jinsoo | Game Product Manager | Portfolio 2026</p>
 </footer>
 
-<script>
-// ── Scroll spy ──
-const secs = document.querySelectorAll('section[id]');
-const links = document.querySelectorAll('.nav-links a');
-const spy = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      links.forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === '#'+e.target.id);
-      });
-    }
-  });
-}, {rootMargin:'-60px 0px -55% 0px'});
-secs.forEach(s => spy.observe(s));
-
-// ── Fade-in on scroll ──
-const fades = document.querySelectorAll('.fi');
-const fo = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => {
-    if(e.isIntersecting){
-      setTimeout(() => e.target.classList.add('on'), i * 60);
-      fo.unobserve(e.target);
-    }
-  });
-},{threshold:0.08});
-fades.forEach(el => fo.observe(el));
-</script>
 </body>
 </html>
