@@ -14,6 +14,7 @@
     --text-muted: #5C7A91;
     --border-subtle: rgba(255,255,255,0.07);
   }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
   html, body {
     height: 100%;
     background: var(--navy);
@@ -21,7 +22,6 @@
     font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
   .topbar {
     display: flex;
     align-items: center;
@@ -43,6 +43,7 @@
     text-decoration: none;
     transition: color 0.2s;
     font-weight: 400;
+    white-space: nowrap;
   }
   .back-btn:hover { color: var(--accent); }
   .back-btn span { font-size: 16px; }
@@ -55,6 +56,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 500px;
+    text-align: center;
+    padding: 0 16px;
   }
   .topbar-right {
     font-size: 11px;
@@ -72,6 +75,12 @@
     border: none;
     display: block;
   }
+  @media (max-width: 640px) {
+    .topbar { padding: 12px 16px; }
+    .doc-title { font-size: 11px; max-width: 160px; }
+    .topbar-right { display: none; }
+    .back-btn { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -85,10 +94,10 @@
 </div>
 
 <div class="pdf-wrap">
-  <iframe src="https://rainkim84.github.io/portfolio/Risk_Advanced_Analysis.pdf" type="application/pdf" title="대홍마 시장 — 불법 프로그램과 작업장 심층 분석">
-    <p>PDF를 불러올 수 없습니다.
-      <a href="https://rainkim84.github.io/portfolio/Risk_Advanced_Analysis.pdf" style="color:#C8960C;">직접 열기 →</a>
-    </p>
+  <iframe 
+    src="https://drive.google.com/file/d/1U_TdMVhLO3ooDoqLYcQ4CXdGBlerO6pO/preview" 
+    allow="autoplay"
+    title="대홍마 시장 — 불법 프로그램과 작업장 심층 분석">
   </iframe>
 </div>
 
