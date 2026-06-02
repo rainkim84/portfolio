@@ -39,7 +39,7 @@
 
   /* HEADER */
   header {
-    padding: 24px 48px 20px;
+    padding: 16px 48px 14px;
     max-width: 960px;
     margin: 0 auto;
     border-bottom: 0.5px solid var(--border-subtle);
@@ -150,7 +150,7 @@
   main {
     max-width: 960px;
     margin: 0 auto;
-    padding: 20px 48px 32px;
+    padding: 14px 48px 24px;
   }
 
   .section-label {
@@ -159,7 +159,7 @@
     letter-spacing: 0.2em;
     color: var(--accent);
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 
   /* PORTFOLIO CARDS */
@@ -188,7 +188,7 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    padding: 22px 28px;
+    padding: 12px 28px;
     text-decoration: none;
     color: inherit;
   }
@@ -284,7 +284,7 @@
   }
 
   .subdoc-link .pcard-inner {
-    padding: 12px 32px 12px 80px;
+    padding: 8px 32px 8px 80px;
   }
 
   .subdoc-indicator {
@@ -363,18 +363,18 @@
     <span class="meta-dot"></span>
     <span class="meta-item">📧 <a href="mailto:dbtjdcjstk@gmail.com">dbtjdcjstk@gmail.com</a></span>
     <span class="meta-dot"></span>
-    <span class="meta-item">2026.05</span>
+    <span class="meta-item">2026.06</span>
   </div>
 </header>
 
 <main>
-  <p class="section-label">Portfolio Documents</p>
-
-  <div class="portfolio-list">
+  <!-- CORE PORTFOLIO -->
+  <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;margin-bottom:7px;">Core Portfolio</p>
+  <div class="portfolio-list" style="margin-bottom:12px;">
 
     <!-- 01 -->
     <div class="pcard">
-      <a class="pcard-inner" href="https://drive.google.com/file/d/1STUFTzFP9gaISAm2fqc57_DKyCtY3Cew/view?usp=drive_link" target="_blank" rel="noopener">
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Main_Portfolio">
         <span class="pcard-num">01</span>
         <div class="pcard-body">
           <p class="pcard-title">김진수 · 글로벌PM 포트폴리오</p>
@@ -393,7 +393,7 @@
 
     <!-- 02 -->
     <div class="pcard">
-      <a class="pcard-inner" href="https://drive.google.com/file/d/1W-eGEAnGyvv8VWf0I2-Kecv0S6L79eOV/view?usp=drive_link" target="_blank" rel="noopener">
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Market_Analysis">
         <span class="pcard-num">02</span>
         <div class="pcard-body">
           <p class="pcard-title">글로벌 시장 분석 — MMORPG & 서브컬처</p>
@@ -411,10 +411,28 @@
       </a>
     </div>
 
-    <!-- 03 -->
+    <!-- 03 신규 -->
     <div class="pcard">
-      <a class="pcard-inner" href="https://drive.google.com/file/d/1U-htRtn9t6jbHCQ333y-DikZ22MT4oI9/view?usp=drive_link" target="_blank" rel="noopener">
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Product_Analysis">
         <span class="pcard-num">03</span>
+        <div class="pcard-body">
+          <p class="pcard-title">출시 6개월 시점 MMORPG 제품 분석 – 아이온2</p>
+          <p class="pcard-sub">사업·서비스 PM 관점의 제품 진단 및 라이브 서비스 개선 제안</p>
+          <div class="pcard-tags">
+            <span class="ptag ptag-type">Game Analytics</span>
+            <span class="ptag">Product Analytics</span>
+            <span class="ptag">MMORPG</span>
+            <span class="ptag">AION2</span>
+          </div>
+        </div>
+        <span class="pcard-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- 04 (구 03) -->
+    <div class="pcard">
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Risk_Strategy">
+        <span class="pcard-num">04</span>
         <div class="pcard-body">
           <p class="pcard-title">글로벌 작업장 리스크 관리 전략</p>
           <p class="pcard-sub">대홍마(대만 · 홍콩 · 마카오) & 동남아 — 불법 프로그램과 작업장 운영 대응 전략</p>
@@ -428,14 +446,14 @@
       </a>
     </div>
 
-    <!-- 03-1 subdoc -->
+    <!-- 04-1 subdoc -->
     <div class="pcard subdoc-link">
-      <a class="pcard-inner" href="https://drive.google.com/file/d/1U_TdMVhLO3ooDoqLYcQ4CXdGBlerO6pO/view?usp=drive_link" target="_blank" rel="noopener">
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Risk_Advanced_Analysis">
         <div class="subdoc-indicator"></div>
         <div class="pcard-body">
           <p class="pcard-title">대홍마 시장 — 불법 프로그램과 작업장의 근절은 불가능한 것인가</p>
           <div class="pcard-tags">
-            <span class="ptag">심층 분석</span>
+            <span class="ptag">In-Depth Analytics</span>
             <span class="rtag rtag-tw" style="font-size:10px;padding:3px 8px;">TW · HK · MA</span>
           </div>
         </div>
@@ -443,16 +461,22 @@
       </a>
     </div>
 
-    <!-- 04 -->
+  </div>
+
+  <!-- SPECIALIZED ANALYSIS -->
+  <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;color:var(--accent);text-transform:uppercase;margin-bottom:7px;">Specialized Analysis</p>
+  <div class="portfolio-list">
+
+    <!-- 05 (구 04) -->
     <div class="pcard">
-      <a class="pcard-inner" href="https://drive.google.com/file/d/1MJA8fuM8ochtELL_xrhRiKANyiedsNBs/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="pcard-num">04</span>
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Fandom_Analysis">
+        <span class="pcard-num">05</span>
         <div class="pcard-body">
           <p class="pcard-title">팬덤 구조 분석</p>
           <p class="pcard-sub">서브컬처 & MMORPG — 권역별 팬덤 형성 구조 · USP · 후킹·워킹 메커니즘</p>
           <div class="pcard-tags">
-            <span class="ptag ptag-type">Fandom Analysis</span>
-            <span class="ptag">서브컬처</span>
+            <span class="ptag ptag-type">Fandom Analytics</span>
+            <span class="ptag">Subculture</span>
             <span class="ptag">MMORPG</span>
           </div>
         </div>
@@ -460,10 +484,10 @@
       </a>
     </div>
 
-    <!-- 05 -->
+    <!-- 06 (구 05) -->
     <div class="pcard">
-      <a class="pcard-inner" href="https://drive.google.com/file/d/1SiflQXyUleeM5-lkSg7ui4sC7HD-x8my/view?usp=drive_link" target="_blank" rel="noopener">
-        <span class="pcard-num">05</span>
+      <a class="pcard-inner" href="https://rainkim84.github.io/portfolio/Core_Segment_Analysis">
+        <span class="pcard-num">06</span>
         <div class="pcard-body">
           <p class="pcard-title">글로벌 시장 분석 — 코어 세그먼트별 분류</p>
           <p class="pcard-sub">하드코어 / 미드코어 / 하이브리드캐주얼 / 캐주얼 / 하이퍼캐주얼</p>
