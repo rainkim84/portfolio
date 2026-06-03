@@ -4,84 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>김진수 · 글로벌PM 포트폴리오 · Kim Jinsoo</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0D1B2A;
-    --navy-mid: #1A2E42;
-    --accent: #C8960C;
-    --text-primary: #F0EDE6;
-    --text-muted: #5C7A91;
-    --border-subtle: rgba(255,255,255,0.07);
-  }
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
-  html, body {
-    height: 100%;
-    background: var(--navy);
-    color: var(--text-primary);
-    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 32px;
-    background: var(--navy-mid);
-    border-bottom: 0.5px solid var(--border-subtle);
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    height: 52px;
-  }
-  .back-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    font-weight: 400;
-    white-space: nowrap;
-  }
-  .back-btn:hover { color: var(--accent); }
-  .back-btn span { font-size: 16px; }
-  .doc-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-primary);
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 500px;
-    text-align: center;
-    padding: 0 16px;
-  }
-  .topbar-right {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-weight: 300;
-    white-space: nowrap;
-  }
-  .pdf-wrap {
-    position: fixed;
-    top: 52px; left: 0; right: 0; bottom: 0;
-  }
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-  }
-  @media (max-width: 640px) {
-    .topbar { padding: 12px 16px; }
-    .doc-title { display: none; }
-    .topbar-right { display: none; }
-    .back-btn { font-size: 12px; }
-  }
-</style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H9FM8GPP0"></script>
 <script>
@@ -90,24 +12,44 @@
   gtag('js', new Date());
   gtag('config', 'G-8H9FM8GPP0');
 </script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A; --navy-mid: #1A2E42; --accent: #C8960C;
+    --text-primary: #F0EDE6; --text-muted: #5C7A91; --border-subtle: rgba(255,255,255,0.07);
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+  html, body { height: 100%; background: var(--navy); color: var(--text-primary);
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; -webkit-font-smoothing: antialiased; }
+  .topbar { display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 32px; background: var(--navy-mid); border-bottom: 0.5px solid var(--border-subtle);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 52px; }
+  .back-btn { display: flex; align-items: center; gap: 8px; font-size: 13px;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+  .back-btn:hover { color: var(--accent); }
+  .back-btn span { font-size: 16px; }
+  .doc-title { font-size: 13px; font-weight: 500; color: var(--text-primary);
+    letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    max-width: 500px; text-align: center; padding: 0 16px; }
+  .topbar-right { font-size: 11px; color: var(--text-muted); font-weight: 300; white-space: nowrap; }
+  .pdf-wrap { position: fixed; top: 52px; left: 0; right: 0; bottom: 0; }
+  iframe { width: 100%; height: 100%; border: none; display: block; }
+  @media (max-width: 640px) {
+    .topbar { padding: 12px 16px; }
+    .doc-title { display: none; }
+    .topbar-right { display: none; }
+    .back-btn { font-size: 12px; }
+  }
+</style>
 </head>
 <body>
-
 <div class="topbar">
-  <a class="back-btn" href="javascript:history.back()">
-    <span>←</span> Portfolio Index
-  </a>
+  <a class="back-btn" href="javascript:history.back()"><span>←</span> Portfolio Index</a>
   <p class="doc-title">김진수 · 글로벌PM 포트폴리오</p>
   <p class="topbar-right">Kim Jinsoo · Global PM</p>
 </div>
-
 <div class="pdf-wrap">
-  <iframe 
-    src="https://drive.google.com/file/d/1STUFTzFP9gaISAm2fqc57_DKyCtY3Cew/preview" 
-    allow="autoplay"
-    title="김진수 · 글로벌PM 포트폴리오">
-  </iframe>
+  <iframe src="https://drive.google.com/file/d/1-Rw0txIm2SbI1kXX5yFjkKbySN4ud-z3/preview" allow="autoplay" title="김진수 · 글로벌PM 포트폴리오"></iframe>
 </div>
-
 </body>
 </html>
