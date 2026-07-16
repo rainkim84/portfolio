@@ -147,7 +147,7 @@
         const ctx = canvas.getContext("2d");
         await page.render({ canvasContext: ctx, viewport: viewport }).promise;
 
-        // Annotation layer (링크 활성화)
+        // 링크 좌표 직접 계산해서 <a> 태그로 겹쳐 그리기
         const annotationLayerDiv = document.createElement("div");
         annotationLayerDiv.className = "annotationLayer";
         annotationLayerDiv.style.width = cssViewport.width + "px";
@@ -155,22 +155,26 @@
         pageWrap.appendChild(annotationLayerDiv);
 
         const annotations = await page.getAnnotations();
-        pdfjsLib.AnnotationLayer.render({
-          viewport: cssViewport.clone({ dontFlip: true }),
-          div: annotationLayerDiv,
-          annotations: annotations,
-          page: page,
-          linkService: {
-            getDestinationHash: () => "#",
-            getAnchorUrl: (u) => u,
-            navigateTo: () => {},
-            goToDestination: () => {},
-            addLinkAttributes: (link, url) => {
-              link.href = url;
-              link.target = "_blank";
-              link.rel = "noopener noreferrer";
-            },
-          },
+        annotations.forEach(function(ann) {
+          if (ann.subtype === "Link" && ann.url) {
+            const rect = cssViewport.convertToViewportRectangle(ann.rect);
+            const x = Math.min(rect[0], rect[2]);
+            const y = Math.min(rect[1], rect[3]);
+            const w = Math.abs(rect[2] - rect[0]);
+            const h = Math.abs(rect[3] - rect[1]);
+
+            const a = document.createElement("a");
+            a.href = ann.url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.style.position = "absolute";
+            a.style.left = x + "px";
+            a.style.top = y + "px";
+            a.style.width = w + "px";
+            a.style.height = h + "px";
+            a.style.display = "block";
+            annotationLayerDiv.appendChild(a);
+          }
         });
 
         container.appendChild(pageWrap);
