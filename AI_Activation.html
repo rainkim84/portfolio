@@ -102,7 +102,7 @@
 
   async function renderPDF() {
     try {
-      const loadingTask = pdfjsLib.getDocument(url);
+      const loadingTask = pdfjsLib.getDocument({ url: url });
       const pdf = await loadingTask.promise;
       loadingMsg.style.display = "none";
 
