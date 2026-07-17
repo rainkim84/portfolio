@@ -78,6 +78,22 @@
     .topbar-right { display: none; }
     .back-btn { font-size: 12px; }
   }
+
+  .pageWrap {
+    position: relative;
+    margin: 0 auto 12px;
+    display: block;
+  }
+  .annotationLayer {
+    position: absolute;
+    top: 0; left: 0;
+    pointer-events: none;
+  }
+  .annotationLayer a {
+    position: absolute;
+    pointer-events: all;
+    background: transparent;
+  }
 </style>
 </head>
 <body>
@@ -109,20 +125,78 @@
       const containerWidth = Math.min(document.getElementById("viewerContainer").clientWidth - 32, 900);
 
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+       try {
         const page = await pdf.getPage(pageNum);
         const unscaledViewport = page.getViewport({ scale: 1 });
+        const dpr = window.devicePixelRatio || 1;
         const scale = containerWidth / unscaledViewport.width;
-        const viewport = page.getViewport({ scale: scale * (window.devicePixelRatio || 1) });
+        const viewport = page.getViewport({ scale: scale * dpr });
+        const cssViewport = page.getViewport({ scale: scale });
+
+        const pageWrap = document.createElement("div");
+        pageWrap.className = "pageWrap";
+        pageWrap.style.width = cssViewport.width + "px";
+        pageWrap.style.height = cssViewport.height + "px";
 
         const canvas = document.createElement("canvas");
         canvas.width = viewport.width;
         canvas.height = viewport.height;
-        canvas.style.width = (viewport.width / (window.devicePixelRatio || 1)) + "px";
-        canvas.style.height = (viewport.height / (window.devicePixelRatio || 1)) + "px";
-        container.appendChild(canvas);
+        canvas.style.width = cssViewport.width + "px";
+        canvas.style.height = cssViewport.height + "px";
+        pageWrap.appendChild(canvas);
 
         const ctx = canvas.getContext("2d");
         await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+        // 링크 좌표 직접 계산해서 <a> 태그로 겹쳐 그리기
+        const annotationLayerDiv = document.createElement("div");
+        annotationLayerDiv.className = "annotationLayer";
+        annotationLayerDiv.style.width = cssViewport.width + "px";
+        annotationLayerDiv.style.height = cssViewport.height + "px";
+        pageWrap.appendChild(annotationLayerDiv);
+
+        try {
+          const annotations = await page.getAnnotations();
+          annotations.forEach(function(ann) {
+            try {
+              if (ann.subtype === "Link" && ann.url) {
+                // PDF 좌표계(왼쪽아래 원점, y상향) → 화면 좌표계(왼쪽위 원점, y하향) 직접 변환
+                const pdfScale = cssViewport.scale;
+                const pageHeight = unscaledViewport.height * pdfScale;
+                const [x0, y0, x1, y1] = ann.rect;
+                const left = Math.min(x0, x1) * pdfScale;
+                const right = Math.max(x0, x1) * pdfScale;
+                const top = pageHeight - Math.max(y0, y1) * pdfScale;
+                const bottom = pageHeight - Math.min(y0, y1) * pdfScale;
+                const x = left;
+                const y = top;
+                const w = right - left;
+                const h = bottom - top;
+
+                const a = document.createElement("a");
+                a.href = ann.url;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.style.position = "absolute";
+                a.style.left = x + "px";
+                a.style.top = y + "px";
+                a.style.width = w + "px";
+                a.style.height = h + "px";
+                a.style.display = "block";
+                annotationLayerDiv.appendChild(a);
+              }
+            } catch (linkErr) {
+              console.warn("링크 렌더 실패:", linkErr);
+            }
+          });
+        } catch (annErr) {
+          console.warn("주석 로딩 실패 (페이지 " + pageNum + "):", annErr);
+        }
+
+        container.appendChild(pageWrap);
+       } catch (pageErr) {
+         console.warn("페이지 " + pageNum + " 렌더 실패:", pageErr);
+       }
       }
     } catch (err) {
       loadingMsg.textContent = "문서를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.";
