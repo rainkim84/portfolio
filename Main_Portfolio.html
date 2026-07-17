@@ -125,6 +125,7 @@
       const containerWidth = Math.min(document.getElementById("viewerContainer").clientWidth - 32, 900);
 
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+       try {
         const page = await pdf.getPage(pageNum);
         const unscaledViewport = page.getViewport({ scale: 1 });
         const dpr = window.devicePixelRatio || 1;
@@ -154,30 +155,41 @@
         annotationLayerDiv.style.height = cssViewport.height + "px";
         pageWrap.appendChild(annotationLayerDiv);
 
-        const annotations = await page.getAnnotations();
-        annotations.forEach(function(ann) {
-          if (ann.subtype === "Link" && ann.url) {
-            const rect = cssViewport.convertToViewportRectangle(ann.rect);
-            const x = Math.min(rect[0], rect[2]);
-            const y = Math.min(rect[1], rect[3]);
-            const w = Math.abs(rect[2] - rect[0]);
-            const h = Math.abs(rect[3] - rect[1]);
+        try {
+          const annotations = await page.getAnnotations();
+          annotations.forEach(function(ann) {
+            try {
+              if (ann.subtype === "Link" && ann.url) {
+                const rect = cssViewport.convertToViewportRectangle(ann.rect);
+                const x = Math.min(rect[0], rect[2]);
+                const y = Math.min(rect[1], rect[3]);
+                const w = Math.abs(rect[2] - rect[0]);
+                const h = Math.abs(rect[3] - rect[1]);
 
-            const a = document.createElement("a");
-            a.href = ann.url;
-            a.target = "_blank";
-            a.rel = "noopener noreferrer";
-            a.style.position = "absolute";
-            a.style.left = x + "px";
-            a.style.top = y + "px";
-            a.style.width = w + "px";
-            a.style.height = h + "px";
-            a.style.display = "block";
-            annotationLayerDiv.appendChild(a);
-          }
-        });
+                const a = document.createElement("a");
+                a.href = ann.url;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.style.position = "absolute";
+                a.style.left = x + "px";
+                a.style.top = y + "px";
+                a.style.width = w + "px";
+                a.style.height = h + "px";
+                a.style.display = "block";
+                annotationLayerDiv.appendChild(a);
+              }
+            } catch (linkErr) {
+              console.warn("링크 렌더 실패:", linkErr);
+            }
+          });
+        } catch (annErr) {
+          console.warn("주석 로딩 실패 (페이지 " + pageNum + "):", annErr);
+        }
 
         container.appendChild(pageWrap);
+       } catch (pageErr) {
+         console.warn("페이지 " + pageNum + " 렌더 실패:", pageErr);
+       }
       }
     } catch (err) {
       loadingMsg.textContent = "문서를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.";
