@@ -160,11 +160,18 @@
           annotations.forEach(function(ann) {
             try {
               if (ann.subtype === "Link" && ann.url) {
-                const rect = cssViewport.convertToViewportRectangle(ann.rect);
-                const x = Math.min(rect[0], rect[2]);
-                const y = Math.min(rect[1], rect[3]);
-                const w = Math.abs(rect[2] - rect[0]);
-                const h = Math.abs(rect[3] - rect[1]);
+                // PDF 좌표계(왼쪽아래 원점, y상향) → 화면 좌표계(왼쪽위 원점, y하향) 직접 변환
+                const pdfScale = cssViewport.scale;
+                const pageHeight = unscaledViewport.height * pdfScale;
+                const [x0, y0, x1, y1] = ann.rect;
+                const left = Math.min(x0, x1) * pdfScale;
+                const right = Math.max(x0, x1) * pdfScale;
+                const top = pageHeight - Math.max(y0, y1) * pdfScale;
+                const bottom = pageHeight - Math.min(y0, y1) * pdfScale;
+                const x = left;
+                const y = top;
+                const w = right - left;
+                const h = bottom - top;
 
                 const a = document.createElement("a");
                 a.href = ann.url;
